@@ -1,0 +1,9 @@
+
+name = "avaliacao-github"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "banco_avaliacao"
+database_id = "COLOQUE_SEU_DATABASE_ID_AQUI"
+migrations_dir = "migrations"
