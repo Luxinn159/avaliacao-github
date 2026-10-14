@@ -5,5 +5,5 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "banco_avaliacao"
-database_id = "COLOQUE_SEU_DATABASE_ID_AQUI"
+database_id = "07b184d7-84b1-490f-9e23-f4b61a4dce3a"
 migrations_dir = "migrations"
