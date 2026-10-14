@@ -26,17 +26,15 @@ jobs:
 
       - name: Monta o prompt
         run: |
-          {
-            echo "Revise o diff de um site com Cloudflare Pages Functions e D1."
-            echo "Aponte, em português e em até 10 itens: segredos expostos,"
-            echo "SQL montado por concatenação em vez de prepare().bind(), e erros de lógica."
-            echo '```diff'
-            git diff origin/${{ github.base_ref }}...HEAD | head -c 20000
-            echo '```'
-          } > prompt.txt
+          echo "Revise o diff de um site com Cloudflare Pages Functions e D1." > prompt.txt
+          echo "Aponte, em português e em até 10 itens: segredos expostos," >> prompt.txt
+          echo "SQL montado por concatenação em vez de prepare().bind(), e erros de lógica." >> prompt.txt
+          echo '```diff' >> prompt.txt
+          git diff origin/${{ github.base_ref }}...HEAD | head -c 20000 >> prompt.txt
+          echo '```' >> prompt.txt
 
       - id: ia
-       uses: actions/ai-inference@v3
+        uses: actions/ai-inference@v3
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
