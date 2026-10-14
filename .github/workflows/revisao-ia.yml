@@ -1,0 +1,25 @@
+
+name: Revisao automatica com IA
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  revisao-ia:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Analisar alteracoes
+        run: |
+          echo "Iniciando revisao automatica"
+          echo "Verificando arquivos alterados"
+          git diff --check
+          echo "Verificacao concluida"
