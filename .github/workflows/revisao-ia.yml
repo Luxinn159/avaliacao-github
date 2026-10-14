@@ -23,6 +23,8 @@ jobs:
           node-version: 22
 
       - run: npm install -g @github/copilot
+      - name: Verificar opcoes do Copilot
+       run: copilot --help
 
       - name: Monta o prompt
         run: |
