@@ -48,3 +48,20 @@ https://github.com/Luxinn159/avaliacao-github/pulls
 ## 8. Considerações finais
 
 O projeto demonstra o uso de GitHub Actions para integração contínua, revisão automatizada com IA, implantação no Cloudflare Pages e aplicação de migrações no banco Cloudflare D1.
+## 9. Respostas às perguntas da avaliação
+
+### Pergunta 1 — Por que o CI roda duas vezes?
+
+O `ci.yml` roda duas vezes porque está configurado para os eventos `push` e `pull_request`. Quando fazemos push em uma branch com PR aberto, os dois eventos podem disparar execuções, mas a proteção da `main` considera o status check exigido pela regra de proteção, associado ao PR.
+
+### Pergunta 2 — Por que um fork não recebe o COPILOT_PAT?
+
+Por segurança, os workflows de Pull Requests vindos de forks não recebem os segredos do repositório de destino, como `secrets.COPILOT_PAT`. Isso impede que alguém envie código malicioso em um PR para tentar roubar tokens e outras credenciais.
+
+### Pergunta 3 — Por que declarar permissions?
+
+O workflow declara `permissions` para definir explicitamente quais acessos o `GITHUB_TOKEN` precisa ter, seguindo o princípio do menor privilégio. A revisão precisa ler o conteúdo do repositório e publicar comentários nos Pull Requests, sem receber permissões desnecessárias.
+
+### Pergunta 4 — A revisão da IA substitui o CI?
+
+Não. A revisão da IA pode ajudar a identificar problemas, mas suas respostas podem conter erros, omissões ou observações irrelevantes; por isso, precisam de avaliação humana. O CI executa verificações automáticas e objetivas que podem bloquear um merge quando falham, enquanto a IA funciona como uma análise complementar.
