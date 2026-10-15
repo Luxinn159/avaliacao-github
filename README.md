@@ -35,3 +35,26 @@ O Pull Request #2 foi integrado à branch `main` após a aprovação dos três c
 ## Resultado
 
 A atividade demonstrou como o GitHub Actions pode identificar erros automaticamente e como as regras de proteção ajudam a impedir a integração de alterações que não passaram nas verificações obrigatórias.
+## Evidências do projeto
+
+As capturas de tela foram adicionadas ao repositório no Pull Request #11.
+
+### Integração contínua (CI)
+Os testes automáticos verificam o código HTML, as migrações SQL e possíveis segredos no repositório.
+
+### Proteção da branch main
+As alterações são realizadas por Pull Requests, com verificações obrigatórias antes da integração.
+
+### Revisão de código com IA
+O workflow de revisão automática analisa as alterações e publica comentários nos Pull Requests.
+
+### Cloudflare Pages
+O projeto possui implantação automática pelo Cloudflare Pages.
+
+### Banco de dados Cloudflare D1
+O banco `banco_avaliacao` contém a tabela `notas`, incluindo a coluna `observacao`.
+
+### Capturas de tela
+As 10 imagens de evidência estão disponíveis na raiz do repositório.
+
+[Ver as evidências no Pull Request #11](https://github.com/Luxinn159/avaliacao-github/pull/11)
