@@ -23,8 +23,7 @@ jobs:
           node-version: 22
 
       - run: npm install -g @github/copilot
-      - name: Verificar opcoes do Copilot
-        run: copilot models list
+    
 
       - name: Monta o prompt
         run: |
@@ -40,7 +39,7 @@ jobs:
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
-          model: gpt-4o
+          model: auto
           prompt-file: prompt.txt
           system-prompt: Você é um revisor de código objetivo.
 
